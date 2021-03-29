@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,5 +21,12 @@ class MainActivity : AppCompatActivity() {
         Glide.with(this)
                 .load(image)
                 .into(imageOne)
+
+        Glide.with(this)
+                .load(image)
+                .fitCenter()
+                .circleCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(imageTwo)
     }
 }
