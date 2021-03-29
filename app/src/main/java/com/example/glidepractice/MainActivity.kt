@@ -28,5 +28,11 @@ class MainActivity : AppCompatActivity() {
                 .circleCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imageTwo)
+
+        Glide.with(this)
+                .load(image)
+                .override(300,400)
+                .centerCrop()
+                .into(imageThree)
     }
 }
